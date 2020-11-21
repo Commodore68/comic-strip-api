@@ -22,7 +22,7 @@ app.use('/api', require('./api'));
 
 // Serve any static files
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '..', 'views', 'index.ejs'));
+    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
 
 
@@ -31,7 +31,7 @@ const server = app.listen(process.env.PORT || 3000, () => {
         console.log(`⚡️[server]: Server is running at http://localhost:${server.address().port}`);
     }
     else if (process.env.NODE_ENV === 'production') {
-        //console.log(`⚡️[server]: Server is running at https://healthy-competition-412.herokuapp.com:${server.address().port}`);
+        console.log(`⚡️[server]: Server is running at https://comic-strip-api.herokuapp.com:${server.address().port}`);
     }
 });
 

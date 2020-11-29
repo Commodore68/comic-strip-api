@@ -1,0 +1,11 @@
+{
+  "comic": "zits",
+  "baseUrl": "https://comics.azcentral.com/slideshow?ckpage=daily-comic&feature_id=Zits&feature_date=",
+  "dateFormat": "yyyy-mm-dd",
+  "htmlTags": [
+    {
+      "name": "",
+      "value": ""
+    }
+  ]
+}

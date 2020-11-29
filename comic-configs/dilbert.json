@@ -1,0 +1,27 @@
+{
+  "comic": "dilbert",
+  "baseUrl": "https://dilbert.com/strip/",
+  "dateFormat": "yyyy-mm-dd",
+  "htmlTags": [
+    {
+      "name": "image",
+      "value": ".img-comic"
+    },
+    {
+      "name": "date",
+      "value": ".comic-title-date"
+    },
+    {
+      "name": "title",
+      "value": ".comic-title-name"
+    },
+    {
+      "name": "tags",
+      "value": ".comic-tags"
+    },
+    {
+      "name": "transcript",
+      "value": ".comic-transcript"
+    }
+  ]
+}

@@ -15,22 +15,27 @@ async function controller(req, res, next) {
     try {
         config = require(`../../comic-configs/${comicName}`);
     } catch (e) {
-        console.log('entered require comic config error')
-        res.status(400).send('comic config does not exist');
+        const err = new Error('comic config does not exist');
+        err.statusCode = 404;
+        return next(err);
     }
 
     //get the date string based on the format in the comic config and the query params
     try {
         comicDateString = getDateString({date, year, month, day, dateFormat: config.dateFormat});
     } catch (e) {
-        res.status(400).send(e.message);
+        const err = new Error(e.message);
+        err.statusCode = 400;
+        return next(err);
     }
 
     //make a request for the comic strip webpage based on the date and comic
     const response = await fetch(`${config.baseUrl}${comicDateString}`);
 
     if (response.status !== 200) {
-        res.status(404).send(`Error comic page ${config.baseUrl}${comicDateString} does not exist`)
+        const err = new Error(`Error comic page ${config.baseUrl}${comicDateString} does not exist`);
+        err.statusCode = 404;
+        return next(err);
     } else {
         const html = await response.text();
 
@@ -39,13 +44,15 @@ async function controller(req, res, next) {
             const data = extractData({html, htmlTags: config.htmlTags});
 
             const response = {
-                ...data,
                 comic: config.comic,
+                ...data,
             };
 
             res.status(200).send(response);
         } catch (e) {
-            res.status(500).send(e.message);
+            const err = new Error(e.message);
+            err.statusCode = 500;
+            return next(err);
         }
     }
 }

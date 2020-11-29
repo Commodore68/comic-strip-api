@@ -20,6 +20,11 @@ app.get('/api', controller);
 // Serve any static files
 app.use(express.static(path.join(__dirname, '..', 'views')));
 
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(err.statusCode).send(err.message);
+})
+
 const server = app.listen(process.env.PORT || 3000, () => {
     if (process.env.NODE_ENV === 'development') {
         console.log(`⚡️[server]: Server is running at http://localhost:${server.address().port}`);

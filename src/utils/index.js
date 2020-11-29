@@ -1,4 +1,4 @@
-
+const HTMLParser = require('node-html-parser');
 
 function getDateString(args) {
     const {
@@ -42,10 +42,39 @@ function getDateString(args) {
 }
 
 function extractData({html, htmlTags}) {
+    const root = HTMLParser.parse(html);
 
+    if (!HTMLParser.valid(html)) {
+        throw new Error('html not valid');
+    }
 
+    const data = {};
 
-    return true;
+    //loop through each tag from the config
+    htmlTags.forEach((tag) => {
+        const node = root.querySelector(tag.value);
+
+        //do the various operations for the different type of information to parse
+        let result;
+
+        if (node !== null) {
+            if (tag.name === 'image') {
+                result = node.getAttribute('src');
+            } else if (tag.name === 'date') {
+                result = node.removeWhitespace().rawText;
+            } else if (tag.name === 'title') {
+                result = node.rawText;
+            } else if (tag.name === 'tags') {
+                result = node.removeWhitespace().rawText;
+            } else if (tag.name === 'transcript') {
+                result = node.text.trim();
+            }
+        }
+
+        data[tag.name] = result;
+    });
+
+    return data;
 }
 
 module.exports = {

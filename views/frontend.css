@@ -1,0 +1,23 @@
+.page-container {
+    flex: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.header {
+    margin: 20px
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#results {
+    margin-left: 600px;
+    margin-right: 300px;
+    text-align: start;
+}
+
+* {
+    font-family: sans-serif;
+}

@@ -3,8 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>Comic Strip API</title>
+    <script type="text/javascript">
+        function getUrl() {
+            const urlWithParams = new URL(`${location.href}api`);
+
+            const formData = new FormData(document.forms.apiTest);
+
+            const formInputsArray = [];
+            formInputsArray.push({name: 'comicName', value: formData.get('comicName')});
+            formInputsArray.push({name: 'date', value: formData.get('date')});
+            formInputsArray.push({name: 'year', value: formData.get('year')});
+            formInputsArray.push({name: 'month', value: formData.get('month')});
+            formInputsArray.push({name: 'day', value: formData.get('day')});
+
+            formInputsArray.forEach((item) => {
+                if (item.value !== '') {
+                    urlWithParams.searchParams.append(item.name, item.value);
+                }
+            });
+
+            console.log(urlWithParams.href)
+
+            return urlWithParams.href;
+        }
+
+        async function fetchData() {
+            const urlWithParams = getUrl();
+
+
+            const response = await fetch(urlWithParams)
+
+            if (response.ok) { // if HTTP-status is 200-299
+                               // get the response body
+                let json = await response.json();
+
+                const image = document.getElementById('comicImage');
+                image.src = json.image.src;
+                image.alt = json.image.alt;
+                image.width = 900;
+                image.height = 300;
+                console.log(image)
+
+                document.getElementById('results').innerText += JSON.stringify(json, null, 2);
+
+            } else {
+                alert("HTTP-Error: " + response.status + await response.json());
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="frontend.css" />
 </head>
 <body>
-
+<div class="page-container">
+    <h1 class="header">Comic Strip API</h1>
+    <hr>
+    <form name="apiTest" id="apiTest">
+        <fieldset>
+            <legend>API Request values:</legend>
+            <label for="comic">Comic Name: </label>
+            <input name="comicName" id="comic" required="required" type="text"><br/><br/>
+            <h3>Dates can either be as a single string, three separate values, or omitted</h3>
+            <h4>The string date takes precedence over the split date values</h4>
+            <label for="dateString">Date as a String of yyyy-mm-dd: </label>
+            <input name="date" id="dateString" type="text"><br/>
+            <label for="year">Year: </label>
+            <input name="year" id="year" type="text">
+            <label for="month">Month: </label>
+            <input name="month" id="month" type="text">
+            <label for="day">Day: </label>
+            <input name="day" id="day" type="text">
+        </fieldset>
+    </form>
+    <div id="submit">
+        <button onclick="fetchData()">Get Comic info</button>
+    </div>
+    <div id="results" class="results">
+        Result:&nbsp;<br/>
+    </div>
+    <img id="comicImage" src="" alt="" />
+</div>
 </body>
 </html>

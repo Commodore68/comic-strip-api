@@ -52,6 +52,10 @@
     "include": [
       "src"
     ],
+    "exclude": [
+      "**/data.js",
+      "**/*.test.js"
+    ],
     "reporter": [
       "lcov",
       "text"

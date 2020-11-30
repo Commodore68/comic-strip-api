@@ -57,6 +57,12 @@ function extractData({html, htmlTags}) {
 
     const data = {};
 
+    if (!htmlTags) {
+        throw new Error('htmlTags undefined');
+    } else if (htmlTags.length === undefined) {
+        throw new Error('htmlTags is invalid. expected an array')
+    }
+
     //loop through each tag from the config
     htmlTags.forEach((tag) => {
         const node = root.querySelector(tag.value);

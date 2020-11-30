@@ -22,8 +22,6 @@
                 }
             });
 
-            console.log(urlWithParams.href)
-
             return urlWithParams.href;
         }
 
@@ -40,9 +38,8 @@
                 const image = document.getElementById('comicImage');
                 image.src = json.image.src;
                 image.alt = json.image.alt;
-                image.width = 900;
-                image.height = 300;
-                console.log(image)
+                image.width = 1200;
+                image.height = 400;
 
                 document.getElementById('results').innerText += JSON.stringify(json, null, 2);
 

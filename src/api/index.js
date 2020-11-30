@@ -16,7 +16,7 @@ async function controller(req, res, next) {
         config = require(`../../comic-configs/${comicName}`);
     } catch (e) {
         const err = new Error('comic config does not exist');
-        err.statusCode = 404;
+        err.statusCode = 400;
         return next(err);
     }
 

@@ -21,7 +21,7 @@ Note: if no date is passed when interacting with the API, it will use today's da
 
 ### Error Handling
 
-If no config for the comic passed, it will respond with a 404 error
+If no config for the comic passed, it will respond with a 400 error
 
 If a malformed date is passed, it will respond with a 400 error
 

@@ -59,7 +59,10 @@ function extractData({html, htmlTags}) {
 
         if (node !== null) {
             if (tag.name === 'image') {
-                result = node.getAttribute('src');
+                result = {
+                    src: node.getAttribute('src'),
+                    alt: node.getAttribute('alt')
+                };
             } else if (tag.name === 'date') {
                 result = node.removeWhitespace().rawText;
             } else if (tag.name === 'title') {

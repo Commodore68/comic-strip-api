@@ -1,5 +1,5 @@
 # comic-strip-api
-An API for retrieving comic links and info by date
+An API for developers of frontends to easily retrieve comic links and info by date
 
 API currently served at https://get-comic-strips.herokuapp.com with a simple UI.
 

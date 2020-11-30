@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ChrisPastor/comic-strip-api.git"
   },
-  "keywords": [],
+  "keywords": ["comic", "strip", "API", "comic strips"],
   "author": "Chris Pastor",
   "license": "ISC",
   "bugs": {
@@ -50,7 +50,7 @@
   },
   "nyc": {
     "include": [
-      "./src/**/*.js"
+      "src"
     ],
     "reporter": [
       "lcov",

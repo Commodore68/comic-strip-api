@@ -7,7 +7,7 @@ The API can also be run locally by downloading this project doing npm start (req
 
 The API accepts GET requests to the https://get-comic-strips.herokuapp.com/api endpoint
 
-###API Parameters
+### API Parameters
 
 * comicName: the name of the comic to get information on (__required__)
 * date: a date string currently only accepts __yyyy-mm-dd__ formatted dates 
@@ -19,7 +19,7 @@ The API accepts GET requests to the https://get-comic-strips.herokuapp.com/api e
     
 Note: if no date is passed when interacting with the API, it will use today's date
 
-###Error Handling
+### Error Handling
 
 If no config for the comic passed, it will respond with a 404 error
 
@@ -31,7 +31,7 @@ If for any reason the html pulled from the webpage fails to be parsed, it will r
 
 
 
-###Config Format
+### Config Format
 
 configuration files will have to be added for any comic that this is to be used for
 
@@ -65,7 +65,7 @@ configuration files should be in the format:
         ]
     }
 
-###Notes
+### Notes
 
 The tags can be omitted as is appropriate.
 
@@ -75,7 +75,7 @@ If any page does not contain the tags specified, the API will not return anythin
 
 Config files should be placed in the comic-config folder, and the file should be named the same as the comic
 
-###Future Tasks
+### Future Tasks
 
 - [ ] accept more date formats
 - [ ] add more comic strips

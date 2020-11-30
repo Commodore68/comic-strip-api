@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, '..', 'views')));
 
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(err.statusCode).send(err.message);
+    res.status(err.statusCode).send({status: err.statusCode, message: err.message});
 })
 
 const server = app.listen(process.env.PORT || 3000, () => {

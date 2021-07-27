@@ -1,11 +1,13 @@
 # comic-strip-api
-An API for developers of frontends to easily retrieve comic links and info by date
+An API for developers of frontends to easily retrieve daily comic strip image links and metadata by date
 
-API currently served at https://get-comic-strips.herokuapp.com with a simple UI.
+To see currently supported comic strips, see [Supported Comics](SUPPORTED-COMICS.md)
+
+API, through a simple UI, is currently served at https://get-comic-strips.herokuapp.com
+
+The API accepts GET requests at the https://get-comic-strips.herokuapp.com/api endpoint
 
 The API can also be run locally by downloading this project doing npm start (requires Node.js and npm)
-
-The API accepts GET requests to the https://get-comic-strips.herokuapp.com/api endpoint
 
 ### API Parameters
 
@@ -83,5 +85,6 @@ Config files should be placed in the comic-config folder, and the file should be
 - [ ] make it work with POST requests
 - [ ] return the tags and other long properties in a cleaner formatting
 - [ ] improve the unit testing coverage
+- [ ] look into switching test framework to tap
 
 

@@ -1,7 +1,7 @@
 {
   "name": "comic-strip-api",
-  "version": "1.0.0",
-  "description": "An API for retrieving comic links and info by date",
+  "version": "1.0.1",
+  "description": "An API for retrieving daily comic strips",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -12,30 +12,41 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChrisPastor/comic-strip-api.git"
+    "url": "git+https://github.com/Commodore68/comic-strip-api.git"
   },
-  "keywords": ["comic", "strip", "API", "comic strips"],
-  "author": "Chris Pastor",
-  "license": "ISC",
+  "keywords": [
+    "daily",
+    "comic",
+    "strip",
+    "strips",
+    "API",
+    "api",
+    "comic strip",
+    "comic strips",
+    "comic strip api",
+    "comic strips api"
+  ],
+  "author": "Commodore68",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ChrisPastor/comic-strip-api/issues"
+    "url": "https://github.com/Commodore68/comic-strip-api/issues"
   },
-  "homepage": "https://github.com/ChrisPastor/comic-strip-api#readme",
+  "homepage": "https://github.com/Commodore68/comic-strip-api#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
-    "node-html-parser": "^2.0.0"
+    "node-html-parser": "^4.1.2"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "nodemon": "^2.0.6",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "nodemon": "^2.0.12",
     "nyc": "^15.1.0",
-    "sinon": "^9.2.1",
-    "supertest": "^6.0.1"
+    "sinon": "^11.1.1",
+    "supertest": "^6.1.4"
   },
   "mocha": {
     "exit": true,

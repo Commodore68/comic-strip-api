@@ -1,11 +1,15 @@
 {
   "comic": "zits",
-  "baseUrl": "https://comics.azcentral.com/slideshow?ckpage=daily-comic&feature_id=Zits&feature_date=",
+  "baseUrl": "https://v7.comicskingdom.net/comics/zits/",
   "dateFormat": "yyyy-mm-dd",
   "htmlTags": [
     {
-      "name": "",
-      "value": ""
+      "name": "image",
+      "value": ".img-fluid"
+    },
+    {
+      "name": "date",
+      "value": ".comic-date"
     }
   ]
 }

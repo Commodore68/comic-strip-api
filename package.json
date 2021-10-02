@@ -1,6 +1,6 @@
 {
   "name": "comic-strip-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An API for retrieving daily comic strips",
   "main": "index.js",
   "scripts": {
